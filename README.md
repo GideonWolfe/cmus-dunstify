@@ -1,6 +1,14 @@
-## Cmus-notify
+## Cmus-dunstify
 
 A cmus status notification program made for easy configuration and portability.
+
+### Note
+This script was forked and **slightly** altered from the awesome [cmus-notify](https://github.com/dcx86r/cmus-notify) by [dcx86r](https://github.com/dcx86r).
+
+Basically I replaced `notify-send` with `dunstify`, which allows use of the `-r` flag to **replace** a previous notication with the same ID. I added the `-r` argument to this script, so now you will no longer recieve annoying stacks of notifications if you're rapidly playing/pausing or flipping through songs.
+
+I have not altered filepaths with `cmus-notify` in the name, but I can do so if needed.
+
 
 ![Screenshot](https://raw.githubusercontent.com/dcx86r/cmus-notify/master/2020-12-18-a85d.jpg)
 
@@ -8,7 +16,7 @@ A cmus status notification program made for easy configuration and portability.
 
 * cmus
 * perl
-* notify-send
+* dunstify
 * ffmpeg (optional)
 * PerlMagick (optional)
 
