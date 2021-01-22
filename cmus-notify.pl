@@ -254,6 +254,7 @@ sub main {
 	$body = [ split(/\//, $fmtd{file}) ]->[-1] unless $body;
 # prepend status, which is always provided
 	push(my @args, $fmtd{status});
+	push(@args, "-r", "10");
 	push(@args, $body);
 	chomp($args[-1]);
 	my $vals;
@@ -289,9 +290,9 @@ sub main {
 
 		push(@args, $icon);
 	}
-	error("notify-send unavailable\n")
-		unless grep -e "$_/notify-send", split(/:/, $ENV{PATH});
-	system('notify-send', @args);
+	error("dunstify unavailable\n")
+		unless grep -e "$_/dunstify", split(/:/, $ENV{PATH});
+	system('dunstify', @args);
 	run_ffmpeg($fmtd{file}, $vals) if (ref($vals) && !blessed($vals));
 }
 
